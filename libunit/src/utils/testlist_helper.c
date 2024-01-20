@@ -6,7 +6,7 @@
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:42:34 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/20 23:02:08 by jkhasiza         ###   ########.fr       */
+/*   Updated: 2024/01/20 23:28:21 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,9 @@ void	testlist_run(t_testlist **list)
 	while (temp)
 	{
 		if ((*list)->func() == 0)
-			printf("[%s] : [OK]\n", (*list)->name);
+			printf("[%s] : [OK]\n", temp->name);
 		else
-			printf("[%s] : [KO]\n", (*list)->name);
+			printf("[%s] : [KO]\n", temp->name);
 		temp = temp->next;
 	}
 }
