@@ -6,7 +6,7 @@
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 22:19:43 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 15:16:09 by jkhasiza         ###   ########.fr       */
+/*   Updated: 2024/01/21 15:25:09 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_atoi_launcher(void)
 
 	routine = NULL;
 	testlist_load(&routine, "ft_atoi",
-		"Input is null.", &ft_atoi_test_empty_string);
+		"Input is empty.", &ft_atoi_test_empty_string);
 	testlist_run(&routine);
 	testlist_clear(&routine);
 }
