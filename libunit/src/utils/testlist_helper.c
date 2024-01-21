@@ -54,7 +54,6 @@ void	testlist_clear(t_testlist **list)
 	while (*list)
 	{
 		temp = (*list)->next;
-		free((*list)->name);
 		free(*list);
 		*list = temp;
 	}

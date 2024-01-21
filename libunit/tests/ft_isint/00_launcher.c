@@ -6,7 +6,7 @@
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 22:19:43 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/20 23:29:27 by jkhasiza         ###   ########.fr       */
+/*   Updated: 2024/01/21 12:45:09 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,12 @@ void    ft_isint_launcher(void)
 
     testlist = NULL;
     ft_printf("[FT_ISINT]\n");
-    name = ft_strdup("All chars are digits.");
-    new = testlist_new(name, &test_all_chars_are_digits);
+    new = testlist_new("All chars are digits.", &test_all_chars_are_digits);
     if (!new)
         printf("Failed to create new testlist node\n");
     testlist_add_back(&testlist, new);
 
-    name = ft_strdup("One character is letter.");
-    new = testlist_new(name, &test_one_char_are_letter);
+    new = testlist_new("One character is letter.", &test_one_char_are_letter);
     if (!new)
         printf("Failed to create new testlist node\n");
     testlist_add_back(&testlist, new);
