@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_test.h                                     :+:      :+:    :+:   */
+/*   02_substr_valid_test.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfrants <vfrants@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 14:39:51 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 21:15:23 by vfrants          ###   ########.fr       */
+/*   Created: 2024/01/21 21:19:06 by vfrants           #+#    #+#             */
+/*   Updated: 2024/01/21 21:39:07 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ITOA_TEST_H
-# define FT_ITOA_TEST_H
+#include "ft_substr_test.h"
 
-# include "../../include/libunit.h"
+int	ft_substr_valid_test(void)
+{
+	char	*str;
+	char	*res;
 
-void	ft_itoa_launcher(t_passed *statuses);
-int		ft_itoa_handle_zero_test(void);
-int		ft_itoa_handle_max_int_test(void);
-int		ft_itoa_handle_min_int_test(void);
-
-#endif
+	str = "Hello World";
+	res = ft_substr(str, 6, 5);
+	if (res == NULL)
+		return (KO);
+	if (ft_strncmp(res, "World", 5) == 0)
+		return (free(res), OK);
+	return (free(res), KO);
+}

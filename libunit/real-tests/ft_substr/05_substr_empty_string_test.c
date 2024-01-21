@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_test.h                                     :+:      :+:    :+:   */
+/*   05_substr_empty_string_test.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfrants <vfrants@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 14:39:51 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 21:15:23 by vfrants          ###   ########.fr       */
+/*   Created: 2024/01/21 21:29:03 by vfrants           #+#    #+#             */
+/*   Updated: 2024/01/21 21:40:57 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ITOA_TEST_H
-# define FT_ITOA_TEST_H
+#include "ft_substr_test.h"
 
-# include "../../include/libunit.h"
+int	ft_substr_empty_string_test(void)
+{
+	char	*str;
+	char	*res;
 
-void	ft_itoa_launcher(t_passed *statuses);
-int		ft_itoa_handle_zero_test(void);
-int		ft_itoa_handle_max_int_test(void);
-int		ft_itoa_handle_min_int_test(void);
-
-#endif
+	str = "";
+	res = ft_substr(str, 6, 0);
+	if (res == NULL)
+		return (KO);
+	if (*res == 0)
+		return (free(res), OK);
+	return (free(res), KO);
+}

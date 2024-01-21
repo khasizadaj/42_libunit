@@ -28,10 +28,11 @@ DEPS		= $(SRCS:${SRCS_DIR}/%.c=${OBJS_DIR}/%.d)
 ######                             TESTS                                 ######
 ###############################################################################
 
-TESTER		= routine
-T_ISINT_DIR	= ${TEST_DIR}/ft_isint
-T_ATOI_DIR	= ${TEST_DIR}/ft_atoi
-T_ITOA_DIR	= ${TEST_DIR}/ft_itoa
+TESTER			= routine
+T_ISINT_DIR		= ${TEST_DIR}/ft_isint
+T_ATOI_DIR		= ${TEST_DIR}/ft_atoi
+T_ITOA_DIR		= ${TEST_DIR}/ft_itoa
+T_SUBSTR_DIR	= ${TEST_DIR}/ft_substr
 
 T_SRCS	= \
 	${T_ISINT_DIR}/00_launcher.c \
@@ -51,6 +52,12 @@ T_SRCS	= \
 	${T_ITOA_DIR}/01_handle_zero.c \
 	${T_ITOA_DIR}/02_handle_max_int.c \
 	${T_ITOA_DIR}/03_handle_min_int.c \
+	${T_SUBSTR_DIR}/00_launcher.c \
+	${T_SUBSTR_DIR}/01_substr_null_test.c \
+	${T_SUBSTR_DIR}/02_substr_valid_test.c \
+	${T_SUBSTR_DIR}/03_substr_overflow_index_test.c \
+	${T_SUBSTR_DIR}/04_substr_overflow_len_test.c \
+	${T_SUBSTR_DIR}/05_substr_empty_string_test.c \
 	main.c
 
 T_OBJS	= $(T_SRCS:.c=.o)
