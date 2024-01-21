@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_test.h                                     :+:      :+:    :+:   */
+/*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 14:39:51 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 17:35:15 by jkhasiza         ###   ########.fr       */
+/*   Created: 2024/01/20 22:19:43 by jkhasiza          #+#    #+#             */
+/*   Updated: 2024/01/21 17:37:43 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ATOI_TEST_H
-# define FT_ATOI_TEST_H
+#include "ft_itoa_test.h"
 
-# include "../../include/libunit.h"
+void	ft_itoa_launcher(t_passed *statuses)
+{
+  t_routine *routine;
 
-void	ft_atoi_launcher(t_passed *statuses);
-int		ft_atoi_test_empty_string(void);
-int		ft_atoi_test_null_input(void);
-int		ft_atoi_test_number_with_letter(void);
-int		ft_atoi_test_number_with_only_letters(void);
-
-#endif
+	routine = NULL;
+	testlist_run(&routine, statuses);
+	testlist_clear(&routine);
+}

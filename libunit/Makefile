@@ -26,6 +26,7 @@ DEPS		= $(SRCS:${SRCS_DIR}/%.c=${OBJS_DIR}/%.d)
 
 T_ISINT_DIR	= ${TEST_DIR}/ft_isint
 T_ATOI_DIR	= ${TEST_DIR}/ft_atoi
+T_ITOA_DIR	= ${TEST_DIR}/ft_itoa
 
 T_SRCS	= \
 	${T_ISINT_DIR}/00_launcher.c \
@@ -37,6 +38,10 @@ T_SRCS	= \
 	${T_ISINT_DIR}/06_test_null_input.c \
 	${T_ATOI_DIR}/00_launcher.c \
 	${T_ATOI_DIR}/01_test_empty_input.c \
+	${T_ATOI_DIR}/02_test_null_input.c \
+	${T_ATOI_DIR}/03_test_number_with_letter.c \
+	${T_ATOI_DIR}/04_test_number_with_only_letters.c \
+	${T_ITOA_DIR}/00_launcher.c \
 	main.c
 
 T_OBJS	= $(T_SRCS:.c=.o)

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfrants <vfrants@student.42vienna.com>     +#+  +:+       +#+        */
+/*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:29:47 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 18:14:01 by vfrants          ###   ########.fr       */
+/*   Updated: 2024/01/21 17:39:43 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/libunit.h"
 #include "real-tests/ft_isint/ft_isint_test.h"
 #include "real-tests/ft_atoi/ft_atoi_test.h"
-#include "src/libft/libft.h"
+#include "real-tests/ft_itoa/ft_itoa_test.h"
 
 int main(void)
 {
@@ -23,5 +23,6 @@ int main(void)
     res.total = 0;
     ft_isint_launcher(&res);
     ft_atoi_launcher(&res);
+    ft_itoa_launcher(&res);
     return (0);
 }
