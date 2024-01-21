@@ -63,20 +63,3 @@ void	testlist_clear(t_routine **list)
 		*list = temp;
 	}
 }
-
-void	testlist_run(t_routine **list)
-{
-	t_routine	*temp;
-
-	if (list == NULL || *list == NULL)
-		return ;
-	temp = *list;
-	while (temp)
-	{
-		if ((*list)->func() == 0)
-			ft_printf("[%s]:[%s]:[OK]\n", temp->test_function, temp->test_name);
-		else
-			ft_printf("[%s]:[%s]:[KO]\n", temp->test_function, temp->test_name);
-		temp = temp->next;
-	}
-}
