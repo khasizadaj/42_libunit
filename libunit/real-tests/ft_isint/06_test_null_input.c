@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_test_all_chars_are_digits.c                     :+:      :+:    :+:   */
+/*   06_test_null_input.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 22:23:09 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/20 22:56:53 by jkhasiza         ###   ########.fr       */
+/*   Created: 2024/01/21 13:49:08 by jkhasiza          #+#    #+#             */
+/*   Updated: 2024/01/21 14:13:35 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_isint_test.h"
+#include "./ft_isint_test.h"
 
-int test_all_chars_are_digits(void)
+int	test_null_input(void)
 {
-    char *str = "1234567890";
+	char	*str;
 
-    if (ft_isint(str))
-        return (0);
-    else
-        return (-1);
+	str = NULL;
+	if (ft_isint(str) == FALSE)
+		return (0);
+	else
+		return (-1);
 }

@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   01_test_null_input.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 14:29:47 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 15:15:33 by jkhasiza         ###   ########.fr       */
+/*   Created: 2024/01/21 14:04:08 by jkhasiza          #+#    #+#             */
+/*   Updated: 2024/01/21 14:18:47 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "real-tests/ft_isint/ft_isint_test.h"
-#include "real-tests/ft_atoi/ft_atoi_test.h"
+#include "./ft_atoi_test.h"
 
-int main(void)
+int	ft_atoi_test_empty_string(void)
 {
-    ft_isint_launcher();
-    ft_atoi_launcher();
-    return (0);
+	char	*str;
+
+	str = "";
+	if (ft_atoi(str) == 0)
+		return (0);
+	else
+		return (-1);
 }

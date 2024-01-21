@@ -3,31 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfrants <vfrants@student.42vienna.com>     +#+  +:+       +#+        */
+/*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 22:19:43 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 15:57:39 by vfrants          ###   ########.fr       */
+/*   Updated: 2024/01/21 15:25:09 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_isint_test.h"
+#include "./ft_atoi_test.h"
 
-/*
-    main -> launcher
-
-        creates routine -> name = "ft_strlen", testlist
-            load tests
-            run tests
-
-*/
-
-void    ft_isint_launcher(void)
+void	ft_atoi_launcher(void)
 {
     t_routine *routine;
 
-    routine = NULL;
-    testlist_load(&routine, "ft_isint", "All chars are digits.", &test_all_chars_are_digits);
-    testlist_load(&routine, "ft_isint", "One character is letter.", &test_one_char_are_letter);
-    testlist_run(&routine);
-    testlist_clear(&routine);
+	routine = NULL;
+	testlist_load(&routine, "ft_atoi",
+		"Input is empty.", &ft_atoi_test_empty_string);
+	testlist_run(&routine);
+	testlist_clear(&routine);
 }
