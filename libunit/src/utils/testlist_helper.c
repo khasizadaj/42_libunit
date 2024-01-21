@@ -5,32 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 14:42:34 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/20 23:28:21 by jkhasiza         ###   ########.fr       */
+/*   Created: 2${INCLUDES}024/01/20 14:42:34 by jkhasiza          #+#    #+#             */
+/*   Updated: 2024/01/21 13:06:52 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "../../include/libunit.h"
 
-t_testlist	*testlist_new(char *name, int (*func)(void))
+t_routine	*testlist_new(char *test_function, char *test_name, int (*func)(void))
 {
-    t_testlist	*node;
+    t_routine	*node;
 
-    if (!name || !func)
-        return (NULL);
-
-    node = malloc(sizeof(t_testlist));
+    node = ft_calloc(sizeof(t_routine), 1);
     if (node == NULL)
         return (NULL);
-    node->name = name;
+    node->test_function = test_function;
+    node->test_name = test_name;
     node->func = func;
     node->next = NULL;
     return (node);
 }
 
-void	testlist_add_back(t_testlist **list, t_testlist *new_elem)
+void	testlist_add_back(t_routine **list, t_routine *new_elem)
 {
-	t_testlist	*last;
+	t_routine	*last;
 
 	if (!list || !new_elem)
 		return ;
@@ -45,11 +43,18 @@ void	testlist_add_back(t_testlist **list, t_testlist *new_elem)
 	last->next = new_elem;
 }
 
-void	testlist_clear(t_testlist **list)
+void	testlist_load(t_routine **list, char *test_function, char *test_name, int (*func)(void))
 {
-	t_testlist	*temp;
+	if (!list)
+		return ;
+	testlist_add_back(list, testlist_new(test_function, test_name, func));
+}
 
-	if (list == NULL || *list == NULL)
+void	testlist_clear(t_routine **list)
+{
+	t_routine	*temp;
+
+	if (!list || !(*list))
 		return ;
 	while (*list)
 	{
@@ -59,9 +64,9 @@ void	testlist_clear(t_testlist **list)
 	}
 }
 
-void	testlist_run(t_testlist **list)
+void	testlist_run(t_routine **list)
 {
-	t_testlist	*temp;
+	t_routine	*temp;
 
 	if (list == NULL || *list == NULL)
 		return ;
@@ -69,9 +74,9 @@ void	testlist_run(t_testlist **list)
 	while (temp)
 	{
 		if ((*list)->func() == 0)
-			printf("[%s] : [OK]\n", temp->name);
+			ft_printf("[%s]:[%s]:[OK]\n", temp->test_function, temp->test_name);
 		else
-			printf("[%s] : [KO]\n", temp->name);
+			ft_printf("[%s]:[%s]:[KO]\n", temp->test_function, temp->test_name);
 		temp = temp->next;
 	}
 }
