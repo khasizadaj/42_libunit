@@ -19,8 +19,8 @@ void	ft_atoi_launcher(t_passed *statuses)
 	routine = NULL;
 	testlist_load(&routine, "ft_atoi",
 		"Input is empty.", &ft_atoi_test_empty_string);
-	// testlist_load(&routine, "ft_atoi",
-	// 	"Input is empty.", &ft_atoi_test_null_input);
+	testlist_load(&routine, "ft_atoi",
+		"Input is empty.", &ft_atoi_test_null_input);
 	testlist_load(&routine, "ft_atoi",
 		"Conversion stops at first letter.", &ft_atoi_test_number_with_letter);
 	testlist_load(&routine, "ft_atoi",
