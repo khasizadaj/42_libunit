@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vfrants <vfrants@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 22:19:43 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 13:25:12 by jkhasiza         ###   ########.fr       */
+/*   Updated: 2024/01/21 15:57:39 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 void    ft_isint_launcher(void)
 {
     t_routine *routine;
-    char        *name;
 
     routine = NULL;
     testlist_load(&routine, "ft_isint", "All chars are digits.", &test_all_chars_are_digits);

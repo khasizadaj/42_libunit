@@ -39,7 +39,7 @@ objs/%.o: %.c
 clean:
 	rm -rf $(OBJSDIR)
 
-fclean: clean
+fclean:
 	rm -rf $(OBJSDIR) $(NAME)
 
 re: fclean all

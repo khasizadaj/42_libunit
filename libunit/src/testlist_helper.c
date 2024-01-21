@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libunit.h"
+#include "../include/libunit.h"
 
 t_routine	*testlist_new(char *test_function, char *test_name, int (*func)(void))
 {
