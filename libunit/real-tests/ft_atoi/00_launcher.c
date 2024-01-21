@@ -6,15 +6,15 @@
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 22:19:43 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 16:59:09 by jkhasiza         ###   ########.fr       */
+/*   Updated: 2024/01/21 17:35:18 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_atoi_test.h"
+#include "ft_atoi_test.h"
 
-void	ft_atoi_launcher(void)
+void	ft_atoi_launcher(t_passed *statuses)
 {
-    t_routine *routine;
+	t_routine *routine;
 
 	routine = NULL;
 	testlist_load(&routine, "ft_atoi",
@@ -25,6 +25,6 @@ void	ft_atoi_launcher(void)
 		"Conversion stops at first letter.", &ft_atoi_test_number_with_letter);
 	testlist_load(&routine, "ft_atoi",
 		"Conversion returns 0 input has only letters.", &ft_atoi_test_number_with_only_letters);
-	testlist_run(&routine);
+	testlist_run(&routine, statuses);
 	testlist_clear(&routine);
 }

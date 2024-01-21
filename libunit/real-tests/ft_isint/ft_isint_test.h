@@ -6,7 +6,7 @@
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:39:51 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 14:13:15 by jkhasiza         ###   ########.fr       */
+/*   Updated: 2024/01/21 17:35:45 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../../include/libunit.h"
 
-void	ft_isint_launcher(void);
+void	ft_isint_launcher(t_passed *statuses);
 int		test_all_chars_are_digits(void);
 int		test_one_char_is_letter(void);
 int		test_one_char_is_symbol(void);

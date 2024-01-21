@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2${INCLUDES}024/01/20 14:42:34 by jkhasiza          #+#    #+#             */
+/*   Created: 2024/01/20 14:42:34 by jkhasiza          #+#    #+#             */
 /*   Updated: 2024/01/21 13:06:52 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -61,22 +61,5 @@ void	testlist_clear(t_routine **list)
 		temp = (*list)->next;
 		free(*list);
 		*list = temp;
-	}
-}
-
-void	testlist_run(t_routine **list)
-{
-	t_routine	*temp;
-
-	if (list == NULL || *list == NULL)
-		return ;
-	temp = *list;
-	while (temp)
-	{
-		if ((*list)->func() == 0)
-			ft_printf("[%s]:[%s]:[OK]\n", temp->test_function, temp->test_name);
-		else
-			ft_printf("[%s]:[%s]:[KO]\n", temp->test_function, temp->test_name);
-		temp = temp->next;
 	}
 }
