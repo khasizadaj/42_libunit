@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executor.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfrants <vfrants@student.42vienna.com>     +#+  +:+       +#+        */
+/*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 17:27:49 by vfrants           #+#    #+#             */
-/*   Updated: 2024/01/21 22:46:03 by vfrants          ###   ########.fr       */
+/*   Updated: 2024/01/21 23:38:35 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	testlist_run(t_routine **list, t_passed *res)
 	{
 		status = execute(iter);
 		if (status == FORK_FAIL)
-			return (ft_putendl_fd("Fork failed", STDOUT_FILENO));
+			return (ft_putendl_fd("Fork failed", STDERR_FILENO));
 		if (status == OK)
 			res->passed++;
 		print_result(iter, status);

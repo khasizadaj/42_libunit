@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   testlist_helper.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfrants <vfrants@student.42vienna.com>     +#+  +:+       +#+        */
+/*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:42:34 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 20:56:23 by vfrants          ###   ########.fr       */
+/*   Updated: 2024/01/21 23:38:50 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	testlist_add_back(t_routine **list, t_routine *new_elem)
 	if (!list)
 		return ;
 	if (new_elem == NULL)
-		return (ft_putendl_fd("Malloc failed", STDOUT_FILENO));
+		return (ft_putendl_fd("Malloc failed", STDERR_FILENO));
 	if (!(*list))
 	{
 		*list = new_elem;
