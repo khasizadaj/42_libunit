@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vfrants <vfrants@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:29:47 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/20 23:13:49 by jkhasiza         ###   ########.fr       */
+/*   Updated: 2024/01/21 15:46:32 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_isint_test.h"
+#include "tests/ft_isint/ft_isint_test.h"
 
 int main(void)
 {
