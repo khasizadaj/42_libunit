@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_test_one_char_are_letter.c                      :+:      :+:    :+:   */
+/*   06_test_null_input.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 22:23:09 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/20 22:57:51 by jkhasiza         ###   ########.fr       */
+/*   Created: 2024/01/21 13:49:08 by jkhasiza          #+#    #+#             */
+/*   Updated: 2024/01/21 14:13:35 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_isint_test.h"
+#include "./ft_isint_test.h"
 
-int test_one_char_are_letter(void)
+int	test_null_input(void)
 {
-    char *str = "123456a7890";
+	char	*str;
 
-    if (ft_isint(str) != TRUE)
-        return (0);
-    else
-        return (-1);
+	str = NULL;
+	if (ft_isint(str) == FALSE)
+		return (0);
+	else
+		return (-1);
 }

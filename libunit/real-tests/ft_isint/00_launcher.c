@@ -6,29 +6,30 @@
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 22:19:43 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 13:25:12 by jkhasiza         ###   ########.fr       */
+/*   Updated: 2024/01/21 14:12:43 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_isint_test.h"
 
-/*
-    main -> launcher
-
-        creates routine -> name = "ft_strlen", testlist
-            load tests
-            run tests
-
-*/
-
-void    ft_isint_launcher(void)
+void	ft_isint_launcher(void)
 {
-    t_routine *routine;
-    char        *name;
+	t_routine	*routine;
+	char		*name;
 
-    routine = NULL;
-    testlist_load(&routine, "ft_isint", "All chars are digits.", &test_all_chars_are_digits);
-    testlist_load(&routine, "ft_isint", "One character is letter.", &test_one_char_are_letter);
-    testlist_run(&routine);
-    testlist_clear(&routine);
+	routine = NULL;
+	testlist_load(&routine, "ft_isint",
+		"All chars are digits.", &test_all_chars_are_digits);
+	testlist_load(&routine, "ft_isint",
+		"One character is letter.", &test_one_char_is_letter);
+	testlist_load(&routine, "ft_isint",
+		"One character is symbol.", &test_one_char_is_symbol);
+	testlist_load(&routine, "ft_isint",
+		"One non printable characters.", &test_non_printable_chars);
+	testlist_load(&routine, "ft_isint",
+		"String is empty.", &test_empty_string);
+	testlist_load(&routine, "ft_isint",
+		"Input is null.", &test_null_input);
+	testlist_run(&routine);
+	testlist_clear(&routine);
 }
