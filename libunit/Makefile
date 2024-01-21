@@ -6,9 +6,13 @@ CC			= cc
 AR			= ar -rcs
 RM			= rm -rf
 NAME		= libunit.a
+MAKE		+= --no-print-directory
 CFLAGS		= -Wall -Wextra -Werror -MP -MD
 
-TESTER		= routine
+###############################################################################
+######                              MAIN                                 ######
+###############################################################################
+
 SRCS_DIR	= src
 TEST_DIR	= real-tests
 
@@ -24,6 +28,7 @@ DEPS		= $(SRCS:${SRCS_DIR}/%.c=${OBJS_DIR}/%.d)
 ######                             TESTS                                 ######
 ###############################################################################
 
+TESTER		= routine
 T_ISINT_DIR	= ${TEST_DIR}/ft_isint
 T_ATOI_DIR	= ${TEST_DIR}/ft_atoi
 
@@ -43,6 +48,25 @@ T_OBJS	= $(T_SRCS:.c=.o)
 T_DEPS	= $(T_SRCS:.c=.d)
 
 ###############################################################################
+######                             DUMMY                                 ######
+###############################################################################
+
+D_NAME	= dummy
+
+D_DIR	= dummy-tests
+
+D_SRCS	= \
+	${D_DIR}/00_launcher.c \
+	${D_DIR}/01_OK_test.c \
+	${D_DIR}/02_KO_test.c \
+	${D_DIR}/03_BUSE_test.c \
+	${D_DIR}/04_SEGV_test.c \
+	${D_DIR}/main.c
+
+D_OBJS	= $(D_SRCS:.c=.o)
+D_DEPS	= $(D_SRCS:.c=.d)
+
+###############################################################################
 ######                               LIBFT                               ######
 ###############################################################################
 
@@ -56,7 +80,7 @@ LIBFT		= ${LIBFT_DIR}/libft.a
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(MAKE) -C $(LIBFT_DIR) --no-print-directory
+	$(MAKE) -C $(LIBFT_DIR)
 	cp $(LIBFT) $(NAME)
 	$(AR) $(NAME) $(OBJS)
 
@@ -64,20 +88,28 @@ ${OBJS_DIR}/%.o: ${SRCS_DIR}/%.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-test: $(T_OBJS) $(NAME)
-	$(CC) -o $(TESTER) ${T_OBJS} $(NAME)
-	@clear; ./$(TESTER)
+test: $(TESTER)
+	@./$(TESTER)
+
+$(TESTER): $(T_OBJS) $(NAME)
+	$(CC) -o $@ ${T_OBJS} $(NAME)
+
+dummy-test: $(D_NAME)
+	@./$(D_NAME)
+
+$(D_NAME): $(D_OBJS) $(NAME)
+	$(CC) -o $@ ${D_OBJS} $(NAME)
 
 clean:
-	$(MAKE) clean -C $(LIBFT_DIR) --no-print-directory
-	$(RM) $(OBJS_DIR) $(T_DEPS) $(T_OBJS)
+	$(MAKE) clean -C $(LIBFT_DIR)
+	$(RM) $(OBJS_DIR) $(T_DEPS) $(T_OBJS) $(D_DEPS) $(D_OBJS)
 
 fclean:
-	$(MAKE) fclean -C $(LIBFT_DIR) --no-print-directory
-	$(RM) $(OBJS_DIR) $(T_DEPS) $(T_OBJS) $(NAME) $(TESTER)
+	$(MAKE) fclean -C $(LIBFT_DIR)
+	$(RM) $(OBJS_DIR) $(T_DEPS) $(T_OBJS) $(D_DEPS) $(D_OBJS) $(NAME) $(TESTER) $(D_NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re test
 
--include $(DEPS) $(T_DEPS)
+-include $(DEPS) $(T_DEPS) $(D_DEPS)

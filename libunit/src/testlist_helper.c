@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   testlist_helper.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vfrants <vfrants@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:42:34 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 13:06:52 by jkhasiza         ###   ########.fr       */
+/*   Updated: 2024/01/21 19:12:18 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libunit.h"
+#include "libft/libft.h"
+#include <unistd.h>
 
 t_routine	*testlist_new(char *test_function, char *test_name, int (*func)(void))
 {
@@ -30,8 +32,10 @@ void	testlist_add_back(t_routine **list, t_routine *new_elem)
 {
 	t_routine	*last;
 
-	if (!list || !new_elem)
+	if (!list)
 		return ;
+	if (new_elem == NULL)
+		return ft_putendl_fd("Malloc failed", STDOUT_FILENO);
 	if (!(*list))
 	{
 		*list = new_elem;

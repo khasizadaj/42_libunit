@@ -6,7 +6,7 @@
 /*   By: vfrants <vfrants@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:24:18 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 18:11:27 by vfrants          ###   ########.fr       */
+/*   Updated: 2024/01/21 19:38:29 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 # include "../src/libft/libft.h"
 
-# include "stdio.h"
-# include "stdlib.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <sys/wait.h>
 
 typedef struct	s_routine
 {
@@ -28,10 +29,12 @@ typedef struct	s_routine
 
 typedef enum	s_statuses
 {
+    FORK_FAIL = 2,
+    MALLOC_FAIL = 1,
     OK = 0,
     KO = -1,
     SEGV = -2,
-    BUSE = -3
+    BUS = -3
 }				t_statuses;
 
 typedef struct	s_passed
@@ -40,8 +43,6 @@ typedef struct	s_passed
     int total;
 }				t_passed;
 
-int         load_test(t_routine *testlist, char *name, int (*func)(void));
-int	        launch_tests(t_routine *testlist);
 t_routine	*testlist_new(char *test_function, char *test_name, int (*func)(void));
 void        testlist_add_back(t_routine **list, t_routine *new_elem);
 void	    testlist_load(t_routine **list, char *test_function,
