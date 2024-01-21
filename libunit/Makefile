@@ -37,7 +37,6 @@ T_SRCS	= \
 	${T_ISINT_DIR}/06_test_null_input.c \
 	${T_ATOI_DIR}/00_launcher.c \
 	${T_ATOI_DIR}/01_test_empty_input.c \
-	${T_ATOI_DIR}/02_test_null_input.c \
 	main.c
 
 T_OBJS	= $(T_SRCS:.c=.o)

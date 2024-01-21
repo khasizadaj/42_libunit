@@ -14,7 +14,7 @@
 
 void	ft_atoi_launcher(t_passed *statuses)
 {
-    t_routine *routine;
+  t_routine *routine;
 
 	routine = NULL;
 	testlist_load(&routine, "ft_atoi",
