@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_test.h                                     :+:      :+:    :+:   */
+/*   04_test_number_with_only_letters.c                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 14:39:51 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 17:35:15 by jkhasiza         ###   ########.fr       */
+/*   Created: 2024/01/21 14:04:08 by jkhasiza          #+#    #+#             */
+/*   Updated: 2024/01/21 16:53:44 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ATOI_TEST_H
-# define FT_ATOI_TEST_H
+#include "./ft_atoi_test.h"
 
-# include "../../include/libunit.h"
+int	ft_atoi_test_number_with_only_letters(void)
+{
+	char	*str;
 
-void	ft_atoi_launcher(t_passed *statuses);
-int		ft_atoi_test_empty_string(void);
-int		ft_atoi_test_null_input(void);
-int		ft_atoi_test_number_with_letter(void);
-int		ft_atoi_test_number_with_only_letters(void);
-
-#endif
+	str = "abc";
+	if (ft_atoi(str) == 0)
+		return (0);
+	else
+		return (-1);
+}
