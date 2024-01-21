@@ -1,0 +1,17 @@
+# Compiled object files
+*.o
+
+# Executables
+*.exe
+*.out
+*.a
+
+# Dependency files
+*.d
+
+# Build directory
+/build/
+
+# IDE files
+.vscode/
+.idea/
