@@ -46,7 +46,11 @@ T_SRCS	= \
 	${T_ATOI_DIR}/02_test_null_input.c \
 	${T_ATOI_DIR}/03_test_number_with_letter.c \
 	${T_ATOI_DIR}/04_test_number_with_only_letters.c \
+	${T_ATOI_DIR}/05_test_number_with_zeros.c \
 	${T_ITOA_DIR}/00_launcher.c \
+	${T_ITOA_DIR}/01_handle_zero.c \
+	${T_ITOA_DIR}/02_handle_max_int.c \
+	${T_ITOA_DIR}/03_handle_min_int.c \
 	main.c
 
 T_OBJS	= $(T_SRCS:.c=.o)

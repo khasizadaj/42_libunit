@@ -6,7 +6,7 @@
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 22:19:43 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 17:35:18 by jkhasiza         ###   ########.fr       */
+/*   Updated: 2024/01/21 19:19:24 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	ft_atoi_launcher(t_passed *statuses)
 		"Conversion stops at first letter.", &ft_atoi_test_number_with_letter);
 	testlist_load(&routine, "ft_atoi",
 		"Conversion returns 0 input has only letters.", &ft_atoi_test_number_with_only_letters);
+	testlist_load(&routine, "ft_atoi",
+		"Number with zero in the beginning", &ft_atoi_test_number_with_zeros);
 	testlist_run(&routine, statuses);
 	testlist_clear(&routine);
 }
