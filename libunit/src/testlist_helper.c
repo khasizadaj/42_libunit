@@ -6,7 +6,7 @@
 /*   By: vfrants <vfrants@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:42:34 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 19:12:18 by vfrants          ###   ########.fr       */
+/*   Updated: 2024/01/21 20:56:23 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 #include "libft/libft.h"
 #include <unistd.h>
 
-t_routine	*testlist_new(char *test_function, char *test_name, int (*func)(void))
+t_routine	*testlist_new(char *test_function,
+	char *test_name, int (*func)(void))
 {
-    t_routine	*node;
+	t_routine	*node;
 
-    node = ft_calloc(sizeof(t_routine), 1);
-    if (node == NULL)
-        return (NULL);
-    node->test_function = test_function;
-    node->test_name = test_name;
-    node->func = func;
-    node->next = NULL;
-    return (node);
+	node = ft_calloc(sizeof(t_routine), 1);
+	if (node == NULL)
+		return (NULL);
+	node->test_function = test_function;
+	node->test_name = test_name;
+	node->func = func;
+	node->next = NULL;
+	return (node);
 }
 
 void	testlist_add_back(t_routine **list, t_routine *new_elem)
@@ -35,7 +36,7 @@ void	testlist_add_back(t_routine **list, t_routine *new_elem)
 	if (!list)
 		return ;
 	if (new_elem == NULL)
-		return ft_putendl_fd("Malloc failed", STDOUT_FILENO);
+		return (ft_putendl_fd("Malloc failed", STDOUT_FILENO));
 	if (!(*list))
 	{
 		*list = new_elem;
@@ -47,7 +48,8 @@ void	testlist_add_back(t_routine **list, t_routine *new_elem)
 	last->next = new_elem;
 }
 
-void	testlist_load(t_routine **list, char *test_function, char *test_name, int (*func)(void))
+void	testlist_load(t_routine **list,
+	char *test_function, char *test_name, int (*func)(void))
 {
 	if (!list)
 		return ;

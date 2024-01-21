@@ -6,13 +6,13 @@
 /*   By: vfrants <vfrants@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 19:31:45 by vfrants           #+#    #+#             */
-/*   Updated: 2024/01/21 20:13:23 by vfrants          ###   ########.fr       */
+/*   Updated: 2024/01/21 20:47:58 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "dummy_test.h"
 
-int		segv_test(void)
+int	segv_test(void)
 {
 	char	*str;
 

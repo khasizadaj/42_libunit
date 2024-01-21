@@ -6,7 +6,7 @@
 /*   By: vfrants <vfrants@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 17:27:49 by vfrants           #+#    #+#             */
-/*   Updated: 2024/01/21 19:02:56 by vfrants          ###   ########.fr       */
+/*   Updated: 2024/01/21 20:57:19 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int		execute(t_routine *test)
+int	execute(t_routine *test)
 {
 	int	status;
 	int	pid;
@@ -66,7 +66,7 @@ void	testlist_run(t_routine **list, t_passed *res)
 	{
 		status = execute(iter);
 		if (status == FORK_FAIL)
-			return ft_putendl_fd("Fork failed, cannot run test", STDOUT_FILENO);
+			return (ft_putendl_fd("Fork failed", STDOUT_FILENO));
 		if (status == OK)
 			res->passed++;
 		print_result(iter, status);
