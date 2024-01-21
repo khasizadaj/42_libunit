@@ -13,7 +13,8 @@ SRCS_DIR	= src
 TEST_DIR	= real-tests
 
 SRCS		= \
-	${SRCS_DIR}/testlist_helper.c
+	${SRCS_DIR}/testlist_helper.c \
+	${SRCS_DIR}/executor.c
 
 OBJS_DIR	= ${SRCS_DIR}/objs
 OBJS		= $(SRCS:${SRCS_DIR}/%.c=${OBJS_DIR}/%.o)
