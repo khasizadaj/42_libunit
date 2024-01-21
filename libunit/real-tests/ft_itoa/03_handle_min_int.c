@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_test.h                                     :+:      :+:    :+:   */
+/*   03_handle_min_int.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 14:39:51 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 19:17:36 by jkhasiza         ###   ########.fr       */
+/*   Created: 2024/01/21 18:44:40 by jkhasiza          #+#    #+#             */
+/*   Updated: 2024/01/21 19:13:10 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ATOI_TEST_H
-# define FT_ATOI_TEST_H
+#include "ft_itoa_test.h"
 
-# include "../../include/libunit.h"
+int   ft_itoa_handle_min_int_test(void)
+{
+  char *str;
 
-void	ft_atoi_launcher(t_passed *statuses);
-int		ft_atoi_test_empty_string(void);
-int		ft_atoi_test_null_input(void);
-int		ft_atoi_test_number_with_letter(void);
-int		ft_atoi_test_number_with_only_letters(void);
-int		ft_atoi_test_number_with_zeros(void);
-
-#endif
+  str = ft_itoa(-2147483648);
+  if (ft_strncmp(str, "-2147483648", 11) != 0)
+    return (-1);
+  return (0);
+}
