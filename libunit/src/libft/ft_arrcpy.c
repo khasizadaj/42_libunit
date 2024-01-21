@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arrcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vfrants <vfrants@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:02:57 by jkhasiza          #+#    #+#             */
-/*   Updated: 2023/12/27 19:17:55 by jkhasiza         ###   ########.fr       */
+/*   Updated: 2024/01/21 15:02:48 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
 void	*ft_int_arrcpy(int *dest, const int *src, size_t n)

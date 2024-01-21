@@ -6,7 +6,7 @@
 /*   By: jkhasiza <jkhasiza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 22:19:43 by jkhasiza          #+#    #+#             */
-/*   Updated: 2024/01/21 14:16:40 by jkhasiza         ###   ########.fr       */
+/*   Updated: 2024/01/21 15:16:09 by jkhasiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	ft_atoi_launcher(void)
 {
-	t_routine	*routine;
-	char		*name;
+    t_routine *routine;
 
 	routine = NULL;
 	testlist_load(&routine, "ft_atoi",
