@@ -10,7 +10,7 @@ CFLAGS		= -Wall -Wextra -Werror -MP -MD
 
 TESTER		= routine
 SRCS_DIR	= src
-TEST_DIR	= tests
+TEST_DIR	= real-tests
 
 SRCS		= \
 	${SRCS_DIR}/testlist_helper.c
@@ -24,11 +24,18 @@ DEPS		= $(SRCS:${SRCS_DIR}/%.c=${OBJS_DIR}/%.d)
 ###############################################################################
 
 T_ISINT_DIR	= ${TEST_DIR}/ft_isint
+T_ATOI_DIR	= ${TEST_DIR}/ft_atoi
 
 T_SRCS	= \
 	${T_ISINT_DIR}/00_launcher.c \
 	${T_ISINT_DIR}/01_test_all_chars_are_digits.c \
-	${T_ISINT_DIR}/02_test_one_char_are_letter.c \
+	${T_ISINT_DIR}/02_test_one_char_is_letter.c \
+	${T_ISINT_DIR}/03_test_one_char_is_symbol.c \
+	${T_ISINT_DIR}/04_test_non_printable_chars.c \
+	${T_ISINT_DIR}/05_test_empty_string.c \
+	${T_ISINT_DIR}/06_test_null_input.c \
+	${T_ATOI_DIR}/00_launcher.c \
+	${T_ATOI_DIR}/01_test_empty_input.c \
 	main.c
 
 T_OBJS	= $(T_SRCS:.c=.o)
